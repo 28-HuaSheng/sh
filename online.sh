@@ -19,7 +19,19 @@
       arthas heapdump --live /tmp/dump.hprof
       或者
       arthas vmtool(直接在线观测对象): vmtool --action getInstances --className java.util.HashMap --limit 10 -x5
+      
+      性能测试用例: vmtool --action getInstances --className com.ibeetl.code.ch01.test.OutMemoryCase1 -x 2  
+                  ognl获取属性或者执行方法:(--express 'instances[0].getBean("userController").findUserById(1)')
+      返回:
+      @OutMemoryCase1[][
+        @OutMemoryCase1[
+          map=@HashMap[isEmpty=false;size=605000],
+          idBase=@Long[605000],
+          config=@Config[com.ibeetl.code.ch01.sample.Config@49a01a75],
+    ],
+]
 
 # mysql内存高
 
 # 网卡占用
+  nethogs
