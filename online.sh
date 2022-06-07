@@ -9,7 +9,16 @@
   
   或者通过arthas 'thread -n 3'命令查看最忙的几个线程
 
+
 # jvm内存高
+# vmtool https://juejin.cn/post/6963457392759537701#heading-3
+# ognl   https://juejin.cn/post/6844904013859651597#heading-16
+   1. dump对象
+      jmap -dump:live,format=b,file=xxx.hprof PID
+      或者
+      arthas heapdump --live /tmp/dump.hprof
+      或者
+      arthas vmtool(直接在线观测对象): vmtool --action getInstances --className java.util.HashMap --limit 10 -x5
 
 # mysql内存高
 
