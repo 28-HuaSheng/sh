@@ -10,14 +10,19 @@
   或者通过arthas 'thread -n 3'命令查看最忙的几个线程
 
 
+
+
 ### 内存高
   top 键入M,按内存使用排序
+
+
 
 
 ### jvm内存高
 ### vmtool https://juejin.cn/post/6963457392759537701#heading-3
 ### ognl   https://juejin.cn/post/6844904013859651597#heading-16
    1. dump对象
+      ```java
       jmap -dump:live,format=b,file=xxx.hprof PID （会stw）
       or
       arthas heapdump --live /tmp/dump.hprof
@@ -32,18 +37,29 @@
           map=@HashMap[isEmpty=false;size=605000],
           idBase=@Long[605000],
           config=@Config[com.ibeetl.code.ch01.sample.Config@49a01a75],
-    ],
-]
+        ],
+       ]
+      ```
+   2. 
+  
+      
+
+
+
 
 ### mysql内存高
 ### mysql内存使用的一些系统变量
 * mysql doc about mem use : https://dev.mysql.com/doc/refman/8.0/en/memory-use.html#monitor-mysql-memory-use
-<img width="516" alt="企业微信截图_77123005-a54b-4655-8373-c484bcd33ebc" src="https://user-images.githubusercontent.com/46739345/172550252-54680051-442b-4c7b-a1b8-1906b3b8562d.png">
+* <img width="516" alt="企业微信截图_77123005-a54b-4655-8373-c484bcd33ebc" src="https://user-images.githubusercontent.com/46739345/172550252-54680051-442b-4c7b-a1b8-1906b3b8562d.png">
 * 以上均可通过show/select global variables like查看。
 * innodb_buffer_pool_size : show global variables like 'innodb_buffer_pool_size' / SELECT @@innodb_buffer_pool_size/1024/1024/1024 (系统除了java等剩余内存   的:50%-75%)
 * 
 *    SELECT * FROM performance_schema.memory_summary_global_by_event_name WHERE EVENT_NAME LIKE 'memory/innodb/buf_buf_pool 和
      SELECT * FROM sys.memory_global_by_current_bytes WHERE event_name LIKE 'memory/innodb/buf_buf_pool 在设置为开启状态时，可以查询
+
+
+
+
 
 
 
