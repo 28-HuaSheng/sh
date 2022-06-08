@@ -36,6 +36,8 @@
 ]
 
 # mysql内存高
+# mysql内存使用的一些系统变量
+
 
 # 网卡占用
   nethogs
