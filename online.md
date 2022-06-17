@@ -8,6 +8,8 @@
   jstack pid | grep -A 20 5ede 根据线程号查堆栈信息
   
   或者通过arthas 'thread -n 3'命令查看最忙的几个线程
+  
+  --------------- pidstat工具可以查看进程下 各个thread的cpu情况
 
 
 
@@ -50,7 +52,7 @@
 ### mysql内存高
 ### mysql内存使用的一些系统变量
 * mysql doc about mem use : https://dev.mysql.com/doc/refman/8.0/en/memory-use.html#monitor-mysql-memory-use
-* <img width="516" alt="企业微信截图_77123005-a54b-4655-8373-c484bcd33ebc" src="https://user-images.githubusercontent.com/46739345/172550252-54680051-442b-4c7b-a1b8-1906b3b8562d.png">
+* <img width="200" alt="图" src="https://user-images.githubusercontent.com/46739345/172550252-54680051-442b-4c7b-a1b8-1906b3b8562d.png">
 * 以上均可通过show/select global variables like查看。
 * innodb_buffer_pool_size : show global variables like 'innodb_buffer_pool_size' / SELECT @@innodb_buffer_pool_size/1024/1024/1024 (系统除了java等剩余内存   的:50%-75%)
 * 
