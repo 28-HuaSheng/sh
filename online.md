@@ -16,6 +16,8 @@
 
 ### 内存高
   top 键入M,按内存使用排序
+  - dump堆进行分析
+  - arthas profiler start --event alloc/profiler stop --format html查看火焰图
 
 
 
