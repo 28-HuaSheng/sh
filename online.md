@@ -16,8 +16,13 @@
 ### mysql cpu高
   show full processlist; (select id, db, user, host, command, time, state, info from information_schema.processlist WHERE command='query' limit 100)
   
+  如果mysql被相同的语句频繁查询导致cpu高，那么可能是查询缓存的问题。<img width="305" alt="image" src="https://user-images.githubusercontent.com/46739345/174982044-d760de01-0302-41ee-ac41-15f8b22d4944.png">
+
+  
  select a.user,a.host,a.db,b.thread_os_id,b.thread_id,a.id processlist_id,a.command,a.time,a.state,a.info from information_schema.processlist a,performance_schema.threads b where a.id = b.processlist_id and b.thread_os_id=32272;
 （thread_os_id：操作系统级别线程id）
+
+
 
 
 
