@@ -8,4 +8,4 @@ gradle踩坑
     * https://stackoverflow.com/questions/23796404/could-not-find-method-compile-for-arguments-gradle/66910991#66910991?newreg=df25c4eb3e31480d81a952e3937d4521
     * <<这种 也要替换 addLast
 
-3. 
+3. maven{}标签下 ：allowInsecureProtocol = true 允许不安全的协议，不然报错
