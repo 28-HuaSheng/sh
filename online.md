@@ -12,6 +12,10 @@
   --------------- pidstat工具可以查看进程下 各个thread的cpu情况
   
   
+  #### cpu高--jvm gc导致的
+  jstat -gc 13703 10000 （10s打印一次gc列）
+  
+  
  
 ### mysql cpu高
   show full processlist; (select id, db, user, host, command, time, state, info from information_schema.processlist WHERE command='query' limit 100)
