@@ -26,6 +26,9 @@
  select a.user,a.host,a.db,b.thread_os_id,b.thread_id,a.id processlist_id,a.command,a.time,a.state,a.info from information_schema.processlist a,performance_schema.threads b where a.id = b.processlist_id and b.thread_os_id=32272;
 （thread_os_id：操作系统级别线程id）
 
+mysql 查看从库信息:
+select * from information_schema.processlist where user='repl';
+
 
 
 
