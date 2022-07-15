@@ -15,6 +15,8 @@
   #### cpu高--jvm gc导致的
   jstat -gc 13703 10000 （10s打印一次gc列）
   
+  jmap获取dump文件
+  dump online: https://heaphero.io/index.jsp
   
  
 ### mysql cpu高
