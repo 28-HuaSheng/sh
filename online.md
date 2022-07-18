@@ -16,6 +16,8 @@
   jstat -gc 13703 10000 （10s打印一次gc列）
   
   jmap获取dump文件
+  看存活对象：jmap -histo:live pid > /data/xxx.txt
+  dump堆文件：jmap -dump:format=b,file=filename.hprof pid 
   dump online: https://heaphero.io/index.jsp
   
  
